@@ -1,16 +1,18 @@
 var Express = require ("express");
 var swig = require("swig");
 var routes = require('./routes/');
+var bodyParser = require('body-parser');
 var app = new Express ();
 
 
 
 
- app.engine("html", swig.renderFile);
- app.set('view engine', 'html');
- app.set('views', './views');
- swig.setDefaults({ cache: false });
-
+app.engine("html", swig.renderFile);
+app.set('view engine', 'html');
+app.set('views', './views');
+swig.setDefaults({ cache: false });
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use('/', routes);
 app.use(Express.static('public'));
 
