@@ -1,5 +1,5 @@
 var _ = require('lodash');
-var data = [];
+var data = [{name: "Richard", text: "Random"}, {name: "Tammy Chu", text: "Other Random"}];
 
 function add (name, text) {
   data.push({ name: name, text: text });
