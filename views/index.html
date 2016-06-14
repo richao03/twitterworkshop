@@ -4,7 +4,7 @@
 {% block content %}
 
   <div class="page-header">
-    <h1>Welcome to Twitter.js!</h1>
+    <h1>Welcome to Twitter.js, Tammy!</h1>
   </div>
   <div class="row">
     <div class="col-md-3">
@@ -13,11 +13,18 @@
       100 followers
     </div>
     <div class="col-md-9">
-
+    <div class="row"><h2><b>All Tweets</b></h2></div>
       <!-- display tweets here -->
       {% for tweet in tweets %}
-        <li>{{tweet.name}}<br>{{tweet.text}}</li>
-        <li></li>
+      <div class="row tweet">
+        <div class="col-md-1 tweetbox"><img></div>
+        <div class="col-md-11">
+            <b>{{tweet.name}}</b><br>
+            {{tweet.text}}<br>
+            <button>Re-tweet</button><br>
+        </div>
+
+      </div>
       {% endfor %}
 
     </div>

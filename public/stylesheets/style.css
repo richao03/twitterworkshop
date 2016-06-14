@@ -41,6 +41,11 @@ code {
   font-size: 80%;
 }
 
+.tweet {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
 .tweetbox {
   padding: 7px;
 }
