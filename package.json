@@ -1,0 +1,22 @@
+{
+  "name": "twitter",
+  "version": "1.0.0",
+  "description": "FSA workshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/richao03/twitterworkshop.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richao03/twitterworkshop/issues"
+  },
+  "homepage": "https://github.com/richao03/twitterworkshop#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
