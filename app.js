@@ -1,4 +1,4 @@
-var Express = require("express");
+var express = require ("express");
 var swig = require("swig");
 var app = new Express ();
 
@@ -6,6 +6,10 @@ var app = new Express ();
 //   res.send("welcome ")
 // next();
 // })
+
+app.engine("html", swig.renderFile)
+app.set('view engine', 'html');
+app.set('views', '/views/index.html');
 
 var locals = {
     title: 'An Example',
@@ -16,7 +20,7 @@ var locals = {
     ]
 };
 
-swig.renderFile('/views/index.html', locals);
+swig.renderFile('./views/index.html', locals);
 
 
 app.use(function(req, res, next){
