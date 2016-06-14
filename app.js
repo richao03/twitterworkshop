@@ -1,6 +1,8 @@
 var Express = require ("express");
 var swig = require("swig");
+var routes = require('./routes/');
 var app = new Express ();
+
 
 
 
@@ -8,6 +10,9 @@ var app = new Express ();
  app.set('view engine', 'html');
  app.set('views', './views');
  swig.setDefaults({ cache: false });
+
+app.use('/', routes);
+app.use(Express.static('public'));
 
 var locals = {
     title: 'An Example',
