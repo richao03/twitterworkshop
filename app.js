@@ -1,4 +1,5 @@
-var Express = require ("express");
+var Express = require("express");
+var swig = require("swig");
 var app = new Express ();
 
 // app.get("/", function(req, res, next){
@@ -6,8 +7,16 @@ var app = new Express ();
 // next();
 // })
 
-test
+var locals = {
+    title: 'An Example',
+    people: [
+        { name: 'Gandalf'},
+        { name: 'Frodo' },
+        { name: 'Hermione'}
+    ]
+};
 
+swig.renderFile('/views/index.html', locals);
 
 
 app.use(function(req, res, next){
@@ -29,3 +38,4 @@ next();
 app.listen(3000, function (){
   console.log("server listening")
 })
+
