@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
 router.get("/user/:name", function (req ,res){
   var name = req.params.name
   var list = tweetBank.find({name:name})
-  res.render ('index',{ title: 'Twitter.js - Posts by '+name, tweets: list } )
+  res.render ('index',{ title: 'Twitter.js - Posts by '+name, tweets: list, showForm:true, userName: req.params.name  } )
     })
 
 
