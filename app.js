@@ -4,9 +4,10 @@ var app = new Express ();
 
 
 
- // app.engine("html", swig.renderFile)
- // app.set('view engine', 'html');
- // app.set('views', '/views/index.html');
+ app.engine("html", swig.renderFile);
+ app.set('view engine', 'html');
+ app.set('views', './views');
+ swig.setDefaults({ cache: false });
 
 var locals = {
     title: 'An Example',
@@ -16,28 +17,22 @@ var locals = {
         { name: 'Hermione'}
     ]
 };
-
-
-
-
-// app.use(function(req, res, next){
-//   console.log(req.method, req.path)
-//   console.log(res.statusCode)
-//   next();
-// })
+var people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
 
 app.get("", function(req, res, next){
-  var output =  swig.renderFile('./views/index.html', locals, function (err, output){
- if(err) next(err)
-      else {
-          res.set('Content-Type', 'text/html');
-          res.send(output)
-      }
-      next()
+  // var output =  swig.renderFile('./views/index.html', locals, function (err, output){
+  // if(err) next(err)
+  //     else {
+  //         res.set('Content-Type', 'text/html');
+  //         res.render( './views/index.html', {title: 'Hall of Fame', people: people} );
+  //     }
+      // res.set('Content-Type', 'text/html');
+      res.render( 'index.html', locals);
+      // next()
 });
 
 // next();
-})
+// })
 
 
 // app.use("/special/", function(req, res, next){
